@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบบันทึกค่าใช้จ่าย</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-5">
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold mb-4">บันทึกค่าใช้จ่าย</h2>
+        
+        <form id="expenseForm" class="space-y-4">
+            <input type="text" id="title" placeholder="ชื่อรายการ" class="w-full p-2 border rounded" required>
+            <input type="number" id="amount" placeholder="จำนวนเงิน" class="w-full p-2 border rounded" required>
+            <select id="category" class="w-full p-2 border rounded">
+                <option value="food">อาหาร</option>
+                <option value="transport">การเดินทาง</option>
+                <option value="shopping">ช้อปปิ้ง</option>
+                <option value="others">อื่นๆ</option>
+            </select>
+            <input type="date" id="date" class="w-full p-2 border rounded" required>
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">เพิ่มรายการ</button>
+        </form>
+
+        <h3 class="text-lg font-bold mt-6">รายการค่าใช้จ่าย</h3>
+        <ul id="expenseList" class="mt-3 space-y-2"></ul>
+
+        <h3 class="text-lg font-bold mt-6">ยอดรวมตามหมวดหมู่</h3>
+        <ul id="totalByCategory" class="mt-3 space-y-2"></ul>
+
+        <button onclick="clearExpenses()" class="mt-4 w-full bg-red-500 text-white p-2 rounded">ล้างข้อมูล</button>
+    </div>
+</body>
+</html>
